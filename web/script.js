@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const task = document.getElementById('task').value;
         const dueDate = document.getElementById('dueDate').value;
         addTodo(task, dueDate);
+        todoForm.reset(); // Clear the form after adding a task
     });
 
     todoList.addEventListener('click', (event) => {
@@ -66,7 +67,7 @@ function renderTodos(todos) {
         const li = document.createElement('li');
         li.className = todo.completed ? 'completed' : '';
         li.innerHTML = `
-            <span>${todo.task} (Fällig: ${todo.dueDate})</span>
+            <span>${todo.task} (Due: ${todo.dueDate})</span>
             <div>
                 <button class="toggle" data-id="${todo.id}">${todo.completed ? 'Undo' : 'Complete'}</button>
                 <button class="delete" data-id="${todo.id}">Delete</button>

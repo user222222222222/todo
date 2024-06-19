@@ -5,6 +5,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Kopiere die HTML-, CSS- und JS-Dateien in das Arbeitsverzeichnis
-COPY index.html /usr/share/nginx/html/
-COPY scripts.js /usr/share/nginx/html/
-COPY styles.css /usr/share/nginx/html/
+COPY . .
+
+# Starte NGINX
+CMD ["nginx", "-g", "daemon off;"]

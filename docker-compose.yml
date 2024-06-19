@@ -1,0 +1,5 @@
+services:
+  web:
+    image: spielt_kei_rolle:v1
+    ports:
+      - "8080:80"
